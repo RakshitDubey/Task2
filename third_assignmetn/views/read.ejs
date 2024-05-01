@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-zinc-900 p-10 text-white">
+    <div class="nav">
+        <a href="/" class="text-blue-800">GO to Home page</a>
+      </div>
+
+    <div class="w-full h-full">
+
+        <h1 class="text-3xl tracking-tighter mb-6 text-black">All Users</h1>
+
+        <div class="flex flex-wrap">
+           <% users.forEach(function(user){
+            let userImage = user.image ? user.image : 'https://via.placeholder.com/150';
+            let userName = user.name ? user.name : 'N/A';
+            let userEmail = user.email ? user.email : 'N/A'; %>
+            <div class="user max-w-md p-6 bg-zinc-800 rounded-lg mb-4 mx-2">
+                <img src="<%= userImage %>" alt="User Image" class="w-full h-52 rounded-t-lg mb-4">
+                <h3 class="text-xl mb-2 text-black"><%= userName %></h3>
+                <h5 class="text-gray-400 mb-4"><%= userEmail %></h5>
+                
+            </div>
+           <% }) %>
+           
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
